@@ -3,19 +3,11 @@
 open TickSpec
 open NUnit.Framework
 
-type StockItem = { Count : int }
+let [<Given>] ``I have a quality standard`` () =
+  ()
 
-let mutable stockItem = { Count = 0 }
+let [<When>] ``I build the knowledge base`` () =
+  ()
 
-let [<Given>] ``a customer buys a black jumper`` () = 
-    ()
-      
-let [<Given>] ``I have (.*) black jumpers left in stock`` (n:int) =  
-    stockItem <- { stockItem with Count = n }
-      
-let [<When>] ``he returns the jumper for a refund`` () =  
-    stockItem <- { stockItem with Count = stockItem.Count + 1 }
-      
-let [<Then>] ``I should have (.*) black jumpers in stock`` (n:int) =     
-    let passed = (stockItem.Count = n)
-    Assert.True(passed)
+let [<Then>] ``I should have a quality standard in linked data format`` () =
+  Assert.True(false)
