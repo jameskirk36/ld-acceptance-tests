@@ -19,6 +19,7 @@ NUGET
     Octokit (0.9.0)
       Microsoft.Net.Http
     SourceLink.Fake (1.0.0)
+	Tickspec (1.0.1.1)
 GITHUB
   remote: fsharp/FAKE
   specs:
