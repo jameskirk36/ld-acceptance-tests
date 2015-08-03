@@ -1,4 +1,4 @@
 mimirtests:
-  image: nice/ld-docker-build
+  image: docker-acceptance-tests-env
   volumes: 
     - ~/:/home/

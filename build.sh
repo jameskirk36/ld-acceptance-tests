@@ -3,6 +3,9 @@
 set -eu
 set -o pipefail
 
+# headless browser via xvfb 
+export DISPLAY=:99
+
 cd `dirname $0`
 
 FSIARGS=""
