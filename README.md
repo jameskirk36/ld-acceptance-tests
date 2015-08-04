@@ -7,6 +7,11 @@ There is a development environment for this provided via a docker container.  Th
 
 Open a terminal and change directory to the root of this repository.  Now run the following commands to create the environment and log in
 
+Build the docker image:
+```
+docker build -t docker-acceptance-tests-env .
+```
+
 Start the container:
 ```
 docker-compose up -d
