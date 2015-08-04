@@ -67,6 +67,7 @@
   <ItemGroup>
     <None Include="paket.references" />
     <Content Include="TickSpec.Feature.txt" />
+    <Compile Include="ContentEditorPage.fs" />
     <Compile Include="TickSpec.StepDefinitions.fs" />
     <Compile Include="TickSpec.Fixtures.fs" />
   </ItemGroup>

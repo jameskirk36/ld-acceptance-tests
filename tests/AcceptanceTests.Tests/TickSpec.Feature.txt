@@ -1,6 +1,6 @@
 ﻿Feature: Knowledge base construction
 
 Scenario: Should build the knowledge base from markdown content 
-  Given I have a quality standard
+  Given I have a markdown quality statement
   When I build the knowledge base
-  Then I should have a quality standard in linked data format
+  Then that statement should exist in the triple store

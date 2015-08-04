@@ -4,6 +4,7 @@ set -eu
 set -o pipefail
 
 # headless browser via xvfb 
+Xvfb :99 &
 export DISPLAY=:99
 
 cd `dirname $0`

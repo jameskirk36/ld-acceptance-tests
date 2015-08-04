@@ -1,31 +1,32 @@
-[![Issue Stats](http://issuestats.com/github/fsprojects/ProjectScaffold/badge/issue)](http://issuestats.com/github/fsprojects/ProjectScaffold)
-[![Issue Stats](http://issuestats.com/github/fsprojects/ProjectScaffold/badge/pr)](http://issuestats.com/github/fsprojects/ProjectScaffold)
 
-# ProjectScaffold
+## Development environment setup
 
-This project can be used to scaffold a prototypical .NET solution including file system layout and tooling. This includes a build process that: 
+There is a development environment for this provided via a docker container.  This contains all  the tools needed to build, test and run this app.  The source code is linked into the container via a volume (see docker-compose.yml)
 
-* updates all AssemblyInfo files
-* compiles the application and runs all test projects
-* generates [SourceLinks](https://github.com/ctaggart/SourceLink)
-* generates API docs based on XML document tags
-* generates [documentation based on Markdown files](http://fsprojects.github.io/ProjectScaffold/writing-docs.html)
-* generates [NuGet](http://www.nuget.org) packages
-* and allows a simple [one step release process](http://fsprojects.github.io/ProjectScaffold/release-process.html).
+*Prerequisites:  You need [docker](https://docs.docker.com/installation/) and [docker-compose](https://docs.docker.com/compose/install/) installed. *
 
-In order to start the scaffolding process run 
+Open a terminal and change directory to the root of this repository.  Now run the following commands to create the environment and log in
 
-    $ build.cmd // on windows    
-    $ build.sh  // on mono
-    
-Read the [Getting started tutorial](http://fsprojects.github.io/ProjectScaffold/index.html#Getting-started) to learn more.
+Start the container:
+```
+docker-compose up -d
+```
+Now login to the container with a bash shell
+```
+docker exec -it ldacceptancetests_mimirtests_1 bash
+```
 
-Documentation: http://fsprojects.github.io/ProjectScaffold
+Now change directory to the root of this repository.  Your user home directory (~) has been linked as a volume /home/ in the docker container
+```
+cd /home/
+```
 
-## Maintainer(s)
+Now navigate to this repository
 
-- [@forki](https://github.com/forki)
-- [@pblasucci](https://github.com/pblasucci)
-- [@sergey-tihon](https://github.com/sergey-tihon)
+### Build and test
+Once the environment has been created (see above) build and test using:
 
-The default maintainer account for projects under "fsprojects" is [@fsprojectsgit](https://github.com/fsprojectsgit) - F# Community Project Incubation Space (repo management)
+```
+./build.sh
+```
+

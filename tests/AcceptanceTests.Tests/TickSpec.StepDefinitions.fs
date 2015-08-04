@@ -6,22 +6,18 @@ open canopy
 open System
 open runner
 
-let contentEditorUrl = "http://192.168.138.135"
-
 let [<BeforeScenario>] Setup () =
   start firefox
 
-let [<Given>] ``I have a quality standard`` () =
-  url contentEditorUrl
-  let theTitle = title ()
-  printfn "Title: %s" theTitle
+let [<Given>] ``I have a markdown quality statement`` () =
+  ContentEditorPage.Load
   ()
 
 let [<When>] ``I build the knowledge base`` () =
   ()
 
-let [<Then>] ``I should have a quality standard in linked data format`` () =
-  Assert.True(true)
+let [<Then>] ``that statement should exist in the triple store`` () =
+  Assert.AreEqual(ContentEditorPage.Title, "Owldin")
 
 let [<AfterScenario>] Teardown () =
   quit()
